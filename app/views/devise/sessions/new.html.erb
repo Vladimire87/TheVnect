@@ -20,10 +20,6 @@
         </div>
         <div class="mt-8">
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="flex items-center w-full justify-center mb-2 text-sm text-red-600 dark:text-gray-200">
-              <p class="notice"><%= notice %></p>
-              <p class="alert"><%= alert %></p>
-            </div>
             <div>
               <%= f.label :email, class: "block mb-2 text-sm text-gray-600 dark:text-gray-200" do %>
                 Email Address
