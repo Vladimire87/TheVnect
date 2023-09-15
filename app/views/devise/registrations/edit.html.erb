@@ -8,7 +8,8 @@
       <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Edit Personal details.</p>
     </div>
     <div>
-      <img class="rounded w-40 h-40" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Extra large avatar">
+      <%= image_tag current_user.gravatar_url, class: "rounded w-40 h-40" %>
+      <%# <img class="rounded w-40 h-40" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Extra large avatar"> %>
     </div>
   </div>
   <div class="px-4 mt-4 sm:px-0">
