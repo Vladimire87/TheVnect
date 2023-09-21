@@ -3,12 +3,14 @@ require:
   - rubocop-rails
 
 AllCops:
+  SuggestExtensions: false
   NewCops: enable
   TargetRubyVersion: 3.2
   Exclude:
     - "config/initializers/devise.rb"
     - "db/migrate/20230911133114_devise_create_users.rb"
     - "bin/bundle"
+    - db/schema.rb
 
 Style/Documentation:
   Enabled: false
