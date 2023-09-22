@@ -2,6 +2,9 @@
 
 Rails.application.routes.draw do
   devise_for :users
+  as :user do
+    get 'users/profile', to: 'devise/registrations#edit', as: :user_root
+  end
 
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
