@@ -59,3 +59,5 @@ group :test do
 end
 
 gem 'inline_svg', '~> 1.9'
+
+gem "guard", "~> 2.18"
