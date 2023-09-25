@@ -11,4 +11,20 @@ class User < ApplicationRecord
          :trackable
   validates :first_name, :last_name, :email, presence: true
   validates :tos_agreement, acceptance: { allow_nil: false, on: :create }
+
+  def full_name_upcase
+    "#{first_name} #{last_name}".upcase
+  end
+
+  def full_name_downcase
+    "#{first_name} #{last_name}".downcase
+  end
+
+  def full_name_titleize
+    "#{first_name} #{last_name}".titleize
+  end
+
+  def name_initials
+    "#{first_name.first}#{last_name.first}".upcase
+  end
 end
