@@ -5,10 +5,12 @@
   <div class="max-w-2xl mx-auto">
     <div class="flex justify-between items-center">
       <div class="">
-        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Update Profile:</h2>
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white">Update Profile:</h2>
       </div>
-      <div class="rounded-full w-20 h-20 bg-white text-red-900 flex items-center justify-center text-4xl font-semibold">
-        <%= current_user.name_initials %>
+      <div class="rounded-full w-20 h-20 bg-gray-800 text-white flex items-center justify-center text-4xl font-semibold">
+        <span>
+          <%= current_user.name_initials %>
+        </span>
       </div>
     </div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
