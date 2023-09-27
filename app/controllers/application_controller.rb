@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name tos_agreement])
     devise_parameter_sanitizer.permit(:account_update,
                                       keys: %i[first_name last_name email password password_confirmation
-                                               current_password])
+                                               current_password avatar])
   end
 end
