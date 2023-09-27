@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
   as :user do
     get 'users/profile', to: 'devise/registrations#edit', as: :user_root
   end
