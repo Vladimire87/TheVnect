@@ -12,6 +12,8 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :email, presence: true
   validates :tos_agreement, acceptance: { allow_nil: false, on: :create }
 
+  has_one_attached :avatar, dependent: :destroy
+
   def full_name_upcase
     "#{first_name} #{last_name}".upcase
   end
@@ -27,4 +29,6 @@ class User < ApplicationRecord
   def name_initials
     "#{first_name.first}#{last_name.first}".upcase
   end
+
+  scope :desc, -> { order(id: :desc) }
 end
