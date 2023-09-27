@@ -2,8 +2,10 @@
   <% if user.avatar.attached? %>
     <%= image_tag user.avatar, class: "object-cover mx-auto mb-4 w-36 h-36 rounded-full" %>
   <% else %>
-    <div class="mx-auto mb-4 w-36 h-36 rounded-full bg-gray-100">
-      <a href="#"><%= user.name_initials %></a>
+    <div class="mx-auto mb-4 w-36 h-36 rounded-full bg-gray-200 flex justify-center items-center">
+      <span class="text-4xl font-extrabold">
+        <%= user.name_initials  %>
+      </span>
     </div>
   <% end %>
   <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
