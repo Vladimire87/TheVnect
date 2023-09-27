@@ -4,16 +4,33 @@
 <section class="dark:bg-gray-900">
   <div class="max-w-2xl mx-auto">
     <div class="flex justify-between items-center">
-      <div class="">
+      <div>
         <h2 class="text-xl font-bold text-gray-900 dark:text-white">Update Profile:</h2>
       </div>
-      <div class="rounded-full w-20 h-20 bg-gray-800 text-white flex items-center justify-center text-4xl font-semibold">
-        <span>
-          <%= current_user.name_initials %>
-        </span>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <div class="rounded-full w-20 h-20 bg-gray-800 text-white flex flex-col items-center justify-center text-4xl font-semibold relative cursor-pointer" id="avatar-select-file-button">
+          <% if current_user.avatar.attached? %>
+            <%= image_tag current_user.avatar, class: "object-cover h-20 rounded-full"%>
+            <div class="absolute bottom-0 mb-1" >
+              <svg class=" w-4 h-4 text-lime-400 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 18">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/>
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 3h-2l-.447-.894A2 2 0 0 0 12.764 1H7.236a2 2 0 0 0-1.789 1.106L5 3H3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V5a2 2 0 0 0-2-2Z"/>
+              </svg>
+            </div>
+          <% else %>
+            <span>
+              <%= current_user.name_initials %>
+            </span>
+            <div class="absolute bottom-0 mb-1" >
+              <svg class=" w-4 h-4 text-lime-400 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 18">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/>
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 3h-2l-.447-.894A2 2 0 0 0 12.764 1H7.236a2 2 0 0 0-1.789 1.106L5 3H3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V5a2 2 0 0 0-2-2Z"/>
+              </svg>
+            </div>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.file_field :avatar, class: "hidden" %>
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
         <div class="w-full">
@@ -47,3 +64,14 @@
     <% end %>
   </div>
 </section>
+<script>
+  document.getElementById('avatar-select-file-button').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('input[type="file"]').click();
+  });
+
+  document.querySelector('input[type="file').addEventListener('change', () => {
+  console.log('file attached');
+    document.querySelector('form').submit();
+  });
+</script>
