@@ -32,9 +32,13 @@
                   <span class="absolute -inset-1.5"></span>
                   <span class="sr-only">Open user menu</span>
                   <div class="h-11 w-11 rounded-full bg-white font-bold text-xl flex justify-center items-center">
-                    <span>
-                      <%= current_user.name_initials %>
-                    </span>
+                    <% if current_user.avatar.attached? %>
+                      <%= image_tag current_user.avatar, class: "h-11 w-11 rounded-full object-cover" %>
+                    <% else %>
+                      <span>
+                        <%= current_user.name_initials %>
+                      </span>
+                    <% end %>
                   </div>
                 </button>
               </div>
@@ -123,7 +127,7 @@
     </div>
   </header>
   <main>
-    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       <% flash.each do |k, v| %>
         <%= tag.div v, class: "alert alert-#{k}", role: "alert" %>
       <% end %>
