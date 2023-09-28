@@ -1,19 +1,19 @@
-<div class="text-center text-gray-500 dark:text-gray-400">
+<div class="text-center text-gray-500 dark:text-gray-400 min-w-fit">
   <%= link_to profile_path(user) do %>
     <% if user.avatar.attached? %>
       <%= image_tag user.avatar, class: "object-cover mx-auto mb-4 w-36 h-36 rounded-full" %>
     <% else %>
-      <div class="mx-auto mb-4 w-36 h-36 rounded-full bg-gray-200 flex justify-center items-center">
+      <div class="mx-auto mb-4 w-36 h-36 rounded-full bg-gray-200 flex justify-center items-center object-cover">
         <span class="text-4xl font-extrabold">
           <%= user.name_initials  %>
         </span>
       </div>
     <% end %>
-    <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+    <h3 class="mb-1 text-2xl font-bold text-gray-900 dark:text-white">
       <%= user.full_name_titleize %>
     </h3>
   <% end %>
-  <button type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-1 mb-1">
+  <button class="bg-pink-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none mb-1 ease-linear transition-all duration-150" type="button">
     Add friend
   </button>
 </div>
