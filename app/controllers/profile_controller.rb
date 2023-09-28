@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ProfileController < ApplicationController
-  def index
-    @profile = current_user
+  def show
+    @profile = User.find(params[:id])
   end
 end
