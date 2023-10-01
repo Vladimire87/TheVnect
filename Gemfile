@@ -63,3 +63,5 @@ end
 gem 'inline_svg', '~> 1.9'
 
 gem 'guard', '~> 2.18'
+
+gem "followability", "~> 1.1"

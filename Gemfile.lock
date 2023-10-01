@@ -112,6 +112,7 @@ GEM
     faker (3.2.1)
       i18n (>= 1.8.11, < 2)
     ffi (1.16.2)
+    followability (1.1.1)
     formatador (1.1.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -332,6 +333,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker
+  followability (~> 1.1)
   gravtastic
   guard (~> 2.18)
   image_processing (~> 1.2)
