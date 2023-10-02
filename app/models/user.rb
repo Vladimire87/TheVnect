@@ -4,6 +4,8 @@ class User < ApplicationRecord
   include Gravtastic
   gravtastic
 
+  followability
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -31,4 +33,5 @@ class User < ApplicationRecord
   end
 
   scope :desc, -> { order(id: :desc) }
+
 end

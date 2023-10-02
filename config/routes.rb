@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   root to: redirect('/login')
 
   get '/terms_and_conditions', to: 'terms#show'
+  get 'profile/:id', to: 'profile#show', as: 'profile'
 
-  resources :profile, only: [:show]
+  post '/profile/:id/follow', to: 'profile#follow', as: 'follow'
+  post '/profile/:id/unfollow', to: 'profile#unollow', as: 'unfollow'
+  post '/profile/:id/unrequest', to: 'profile#unrequest', as: 'unrequest'
 end
