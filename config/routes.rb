@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'friends/show'
   devise_for :users, controllers: { registrations: 'registrations' }
 
   devise_scope :user do
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
 
   get '/terms_and_conditions', to: 'terms#show'
   get 'profile/:id', to: 'profile#show', as: 'profile'
+  get 'friends', to: 'friends#show', as: 'friends'
 
   post '/profile/:id/follow', to: 'profile#follow', as: 'follow'
   post '/profile/:id/unfollow', to: 'profile#unollow', as: 'unfollow'

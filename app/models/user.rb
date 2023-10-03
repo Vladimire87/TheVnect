@@ -33,5 +33,4 @@ class User < ApplicationRecord
   end
 
   scope :desc, -> { order(id: :desc) }
-
 end

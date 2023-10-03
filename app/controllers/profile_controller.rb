@@ -6,7 +6,6 @@ class ProfileController < ApplicationController
   def show; end
 
   def follow
-    
     current_user.send_follow_request_to(@user)
     redirect_to profile_path(@user)
   end
