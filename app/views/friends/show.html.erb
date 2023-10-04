@@ -1,4 +1,9 @@
 <%= content_for :dashboard do %>
   Friends
 <% end %>
-<%= render 'friends/pending_request_card' %>
+<%= render 'friends/follow_requests_card' %>
+<br>
+<% current_user.followers.each do |follower|  %>
+  <p><%= follower.full_name_titleize %></p>
+  <p>Friends for <%= time_ago_in_words(follower.created_at) %></p>
+<% end %>

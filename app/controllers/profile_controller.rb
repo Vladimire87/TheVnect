@@ -20,6 +20,11 @@ class ProfileController < ApplicationController
     redirect_to profile_path(@user)
   end
 
+  def accept
+    current_user.accept_follow_request_of(@user)
+    redirect_to profile_path(@user), notice: 'Accepted'
+  end
+
   private
 
   def set_user

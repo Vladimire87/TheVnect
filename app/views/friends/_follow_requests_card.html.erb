@@ -1,0 +1,19 @@
+<div class="grid grid-cols-5 gap-4">
+  <% follow_requests.each do |request| %>
+    <div class="max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div class="flex justify-center pt-2">
+        <%= image_tag request.followable.avatar, class: "rounded-full object-cover w-20 h-20" if request.followable.avatar.present? %>
+      </div>
+      <div class="p-5">
+        <a href="#">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><%= request.followerable.full_name_titleize %></h5>
+        </a>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Wants to be friends with <%= request.followable.full_name_titleize %> </p>
+        <div class="flex justify-between gap-4">
+          <%= button_to 'Accept', accept_path(request.followerable), class: "bg-pink-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150" %>
+          <%= button_to 'Decline', authenticated_root_path, class: "bg-pink-100 active:bg-pink-600 uppercase text-black font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get 'friends', to: 'friends#show', as: 'friends'
 
   post '/profile/:id/follow', to: 'profile#follow', as: 'follow'
-  post '/profile/:id/unfollow', to: 'profile#unollow', as: 'unfollow'
+  post '/profile/:id/unfollow', to: 'profile#unfollow', as: 'unfollow'
   post '/profile/:id/unrequest', to: 'profile#unrequest', as: 'unrequest'
+  post '/profile/:id/accept', to: 'profile#accept', as: 'accept'
+  post '/profile/:id/decline', to: 'profile#decline', as: 'decline'
 end

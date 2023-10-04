@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  def pending_requests
-    current_user.pending_requests.includes(followable: { avatar_attachment: :blob })
+  def follow_requests
+    current_user.follow_requests.includes(followable: { avatar_attachment: :blob })
   end
 
   def active_link_to(text = nil, path = nil, **options, &)

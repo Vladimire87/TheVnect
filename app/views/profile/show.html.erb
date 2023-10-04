@@ -10,7 +10,7 @@
         <div class="flex flex-wrap justify-center">
           <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
             <div class="relative">
-              <%= image_tag @user.avatar, class: "w-36 h-36 rounded-full object-cover shadow-xl -mt-16" %>
+              <%= image_tag @user.avatar, class: "w-36 h-36 rounded-full object-cover shadow-xl -mt-16" if @user.avatar.present?%>
               <%# <img  src="https://demos.creative-tim.com/notus-js/assets/img/team-2-800x800.jpg" class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"> %>
             </div>
           </div>

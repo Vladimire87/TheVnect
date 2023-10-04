@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  include Gravtastic
-  gravtastic
-
   followability
 
   # Include default devise modules. Others available are:
@@ -33,4 +30,8 @@ class User < ApplicationRecord
   end
 
   scope :desc, -> { order(id: :desc) }
+
+  def unfollow(user)
+    followerable_relationships.where(followable_id: user.id).destroy_all
+  end
 end
