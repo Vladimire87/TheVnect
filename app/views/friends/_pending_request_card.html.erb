@@ -1,5 +1,5 @@
 <div class="grid grid-cols-5 gap-4">
-  <% current_user.pending_requests.each do |request| %>
+  <% pending_requests.includes( followable: { avatar_attachment: :blob } ).each do |request| %>
     <div class="max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div class="flex justify-center pt-2">
         <%= image_tag request.followable.avatar, class: "rounded-full object-cover w-20 h-20" %>

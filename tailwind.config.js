@@ -6,12 +6,13 @@ module.exports = {
     './app/javascript/**/*.js',
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
-    './app/views/**/*'
+    './app/views/**/*',
+    './node_modules/flowbite/**/*.js'
   ],
   theme: {
     extend: {}
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
   darkMode: 'class',
   theme: {
     extend: {
