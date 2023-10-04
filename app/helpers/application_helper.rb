@@ -2,7 +2,7 @@
 
 module ApplicationHelper
   def pending_requests
-    current_user.pending_requests.includes(:followable)
+    current_user.pending_requests.includes(followable: { avatar_attachment: :blob })
   end
 end
 
