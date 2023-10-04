@@ -11,13 +11,13 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <%= link_to 'Home', authenticated_root_path, class: "bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" %>
-              <%= link_to 'Friends', friends_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" %>
+              <%= active_link_to 'Home', authenticated_root_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" %>
+              <%= active_link_to 'Friends', friends_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" %>
             </div>
           </div>
         </div>
         <div class="hidden md:block">
-          <div class="ml-4 flex items-center md:ml-6" data-controller="dropdown">
+          <div class="ml-4 flex items-center md:ml-6">
             <%= render 'layouts/notice' %>
             <!-- Profile dropdown -->
             <div class="relative ml-3" data-controller="dropdown">
