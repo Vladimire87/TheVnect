@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  def follow_requests
-    current_user.follow_requests.includes(followable: { avatar_attachment: :blob })
-  end
+  delegate :follow_requests, to: :current_user
 
   def active_link_to(text = nil, path = nil, **options, &)
     link = block_given? ? text : path

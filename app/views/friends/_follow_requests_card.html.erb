@@ -2,7 +2,15 @@
   <% follow_requests.each do |request| %>
     <div class="max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div class="flex justify-center pt-2">
-        <%= image_tag request.followable.avatar, class: "rounded-full object-cover w-20 h-20" if request.followable.avatar.present? %>
+        <% if request.followerable.avatar.present? %>
+          <%= image_tag request.followerable.avatar, class: "rounded-full object-cover w-20 h-20" %>
+        <% else %>
+          <div class="w-20 h-20 rounded-full object-cover shadow-xl bg-gray-200 flex justify-center items-center">
+            <span class="text-4xl font-extrabold">
+              <%= request.followerable.name_initials  %>
+            </span>
+          </div>
+        <% end %>
       </div>
       <div class="p-5">
         <a href="#">
