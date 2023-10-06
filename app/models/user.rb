@@ -3,6 +3,9 @@
 class User < ApplicationRecord
   followability
 
+  has_one_attached :avatar, dependent: :destroy
+  has_many :posts, dependent: :destroy
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -10,8 +13,6 @@ class User < ApplicationRecord
          :trackable
   validates :first_name, :last_name, :email, presence: true
   validates :tos_agreement, acceptance: { allow_nil: false, on: :create }
-
-  has_one_attached :avatar, dependent: :destroy
 
   def full_name_upcase
     "#{first_name} #{last_name}".upcase
