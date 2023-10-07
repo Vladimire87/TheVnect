@@ -1,9 +1,9 @@
 <div class="text-center text-gray-500 dark:text-gray-400 min-w-fit">
   <%= link_to profile_path(user) do %>
     <% if user.avatar.attached? %>
-      <%= image_tag user.avatar, class: "object-cover mx-auto mb-4 w-36 h-36 rounded-full" %>
+      <%= image_tag user.avatar, class: "object-cover mx-auto mb-4 w-24 h-24 rounded-full" %>
     <% else %>
-      <div class="mx-auto mb-4 w-36 h-36 rounded-full bg-gray-200 flex justify-center items-center object-cover">
+      <div class="mx-auto mb-4 w-24 h-24 rounded-full bg-gray-200 flex justify-center items-center object-cover">
         <span class="text-4xl font-extrabold">
           <%= user.name_initials  %>
         </span>

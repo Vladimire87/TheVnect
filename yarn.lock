@@ -754,6 +754,11 @@ stimulus-password-visibility@^2.1.1:
   resolved "https://registry.npmjs.org/stimulus-password-visibility/-/stimulus-password-visibility-2.1.1.tgz"
   integrity sha512-FnscC06Ux7mgfJo9s7OceOQ59yU1Tm8sWByG89hnMPcWvYSX/1yx3wFxNOgKhtxaDPdvtb+ERgmv6F9JvPJc7w==
 
+stimulus-textarea-autogrow@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/stimulus-textarea-autogrow/-/stimulus-textarea-autogrow-4.1.0.tgz#faa2f7952062c4508b1566478dc203af7f24f632"
+  integrity sha512-hYz+xN3VZiO+eLl+zok4yvhH+mW5WkvOJEExyVP3J97dWQzc/qPDFdAM1EDJvfUIuRzJVq/WJynqqQwiied5iw==
+
 stimulus-use@^0.51.1:
   version "0.51.3"
   resolved "https://registry.npmjs.org/stimulus-use/-/stimulus-use-0.51.3.tgz"
