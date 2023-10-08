@@ -3,11 +3,13 @@
 class ProfileController < ApplicationController
   before_action :set_user
 
-  def show; end
+  def show
+    @post = Post.includes(:user).where(user_id: @user)
+  end
 
   def follow
     current_user.send_follow_request_to(@user)
-    redirect_to profile_path(@user)
+    redirect_to profile_path(@user), alert: 'Sent'
   end
 
   def unfollow
