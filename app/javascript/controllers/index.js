@@ -15,3 +15,9 @@ application.register('dropdown', Dropdown)
 
 import PasswordVisibility from 'stimulus-password-visibility'
 application.register('password-visibility', PasswordVisibility)
+
+import CharacterCounter from 'stimulus-character-counter'
+application.register('character-counter', CharacterCounter)
+
+import Notification from 'stimulus-notification'
+application.register('notification', Notification)
