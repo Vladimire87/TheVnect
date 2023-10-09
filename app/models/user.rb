@@ -4,6 +4,8 @@ class User < ApplicationRecord
   followability
 
   has_one_attached :avatar, dependent: :destroy
+
+  has_many :likes, dependent: :destroy
   has_many :posts, dependent: :destroy
 
   # Include default devise modules. Others available are:
