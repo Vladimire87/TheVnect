@@ -58,6 +58,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def like
+    @post = Post.find(params[:id])
+    like = @post.likes.find_by(user: current_user)
+
+    if like.present?
+      like.destroy
+    else
+      @post.likes.create(user: current_user)
+    end
+    render turbo_stream: turbo_stream.replace(@post, partial: 'posts/post', locals: { post: @post })
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

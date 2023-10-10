@@ -41,7 +41,11 @@
   </div>
   <div class="flex items-center gap-2 px-10 justify-between">
     <div class="flex items-center text-xs font-light">
-      <%= likes(post) %>
+      <%= turbo_frame_tag 'like' do%>
+        <%= link_to  like_post_path(post), data: { turbo_method: :post} do %>
+          <%= likes(post) %>
+        <% end %>
+      <% end %>
     </div>
     <div class="text-xs font-light">
       <span >

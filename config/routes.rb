@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts do
+    member { post :like }
+  end
+
   get 'friends/show'
   devise_for :users, controllers: { registrations: 'registrations' }
 

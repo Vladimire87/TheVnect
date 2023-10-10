@@ -7,6 +7,7 @@ class Ability
     return if user.blank?
 
     can :manage, Post, user_id: user.id
+    can :like, :all
     can :read, :all
     # return unless user.admin?
 
