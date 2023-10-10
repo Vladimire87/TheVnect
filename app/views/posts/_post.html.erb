@@ -40,16 +40,8 @@
     </p>
   </div>
   <div class="flex items-center gap-2 px-10 justify-between">
-    <div class="flex items-center">
-      <button type="button" class=" hover:bg-pink-50 hover:text-pink-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center">
-        <svg class="w-5 h-5 text-black hover:fill-pink-600 hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 19">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z"/>
-        </svg>
-        <span class="sr-only">like</span>
-      </button>
-      <span class="text-xs font-light">
-        0
-      </span>
+    <div class="flex items-center text-xs font-light">
+      <%= likes(post) %>
     </div>
     <div class="text-xs font-light">
       <span >
