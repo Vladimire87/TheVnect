@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   resources :posts do
     member { post :like }
+    resources :comments
   end
 
   get 'friends/show'

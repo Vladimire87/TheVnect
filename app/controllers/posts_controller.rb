@@ -2,7 +2,7 @@
 
 class PostsController < ApplicationController
   load_and_authorize_resource
-  before_action :set_post, only: %i[show edit update destroy]
+  before_action :set_post, only: %i[show edit update destroy like]
 
   # GET /posts or /posts.json
   def index
@@ -10,7 +10,9 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1 or /posts/1.json
-  def show; end
+  def show
+    @comment = Comment.new
+  end
 
   # GET /posts/new
   def new
@@ -55,7 +57,6 @@ class PostsController < ApplicationController
   end
 
   def like
-    @post = Post.find(params[:id])
     like = @post.likes.find_by(user: current_user)
 
     if like.present?

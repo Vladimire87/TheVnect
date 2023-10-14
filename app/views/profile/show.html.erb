@@ -29,13 +29,13 @@
           <div class="w-full lg:w-4/12 px-4 lg:order-1">
             <div class="flex justify-center py-4 lg:pt-4 pt-4">
               <div class="mr-4 p-3 text-center">
-                <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600"> <%= @user.followers.length %></span><span class="text-sm text-blueGray-400">Friends</span>
+                <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600"> <%= @user.followers.size %></span><span class="text-sm text-blueGray-400"><%= "Friend".pluralize(@user.followers.size) %></span>
               </div>
               <div class="mr-4 p-3 text-center">
-                <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">10</span><span class="text-sm text-blueGray-400">Photos</span>
+                <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600"><%= @user.posts.size %></span><span class="text-sm text-blueGray-400"><%= "Post".pluralize(@user.posts.size) %></span>
               </div>
               <div class="lg:mr-4 p-3 text-center">
-                <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">89</span><span class="text-sm text-blueGray-400">Comments</span>
+                <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600"><%= @user.comments.size %></span><span class="text-sm text-blueGray-400"><%= "Comment".pluralize(@user.comments.size) %></span>
               </div>
             </div>
           </div>
@@ -45,7 +45,7 @@
             <%= @user.full_name_titleize %>
           </h3>
         </div>
-        <div class="p-4 bg-gray-100 rounded-lg">
+        <div class="p-4 bg-slate-300 mb-2 rounded-lg">
           <div>
             <%= render  @post %>
           </div>

@@ -1,12 +1,14 @@
-<article id="<%= dom_id post %>" class="p-4 mb-4 text-base bg-white rounded-lg dark:bg-gray-900">
+<article id="<%= dom_id post %>" class="p-4 mt-8 mb-4 text-base bg-white rounded-lg dark:bg-gray-900">
   <div class="flex items-center gap-4 justify-between">
     <div class="flex flex-row items-center gap-4">
-      <%= link_to profile_path(post.user) do %>
-        <%= image_tag post.user.avatar, class: "w-14 h-14 rounded-full object-cover" %>
+      <%= link_to profile_path(post.user_id) do %>
+        <%= image_tag(post.user.avatar, class: "w-14 h-14 rounded-full object-cover") %>
       <% end %>
       <div>
         <div class="text-base font-semibold text-black">
-          <%= post.user.full_name_titleize %>
+          <%= link_to profile_path(post.user_id) do %>
+            <%= post.user.full_name_titleize %>
+          <% end %>
         </div>
         <div class="text-xs font-light">
           <%= time_ago_in_words(post.created_at) %> ago
@@ -48,10 +50,7 @@
       <% end %>
     </div>
     <div class="text-xs font-light">
-      <span >
-        0
-      </span>
-      comments
+      <%= pluralize(post.comments_count, 'comment')%>
     </div>
   </div>
 </article>
