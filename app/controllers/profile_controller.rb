@@ -4,7 +4,8 @@ class ProfileController < ApplicationController
   before_action :set_user
 
   def show
-    @post = Post.includes(:user).where(user_id: @user)
+    @posts = Post.includes(:user).where(user_id: @user)
+    @comments = Comment.includes(:user).where(user_id: @user)
   end
 
   def follow
