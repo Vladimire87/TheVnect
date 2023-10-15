@@ -5,5 +5,6 @@ class HomeController < ApplicationController
     # @users = User.includes(avatar_attachment: :blob).all
     @users = User.where.not(id: current_user).includes(avatar_attachment: :blob)
     @posts = Post.includes([:user]).order(created_at: :DESC).all
+    @timeline = Post.where(user_id: current_user.id).includes([:user]).or(Post.where(user_id: current_user.following.ids)).order(created_at: :desc)
   end
 end

@@ -24,10 +24,16 @@ class ProfileController < ApplicationController
 
   def accept
     current_user.accept_follow_request_of(@user)
+    accept_following
     redirect_to profile_path(@user), notice: 'Accepted'
   end
 
   private
+
+  def accept_following
+    current_user.send_follow_request_to(@user)
+    @user.accept_follow_request_of(current_user)
+  end
 
   def set_user
     @user = User.find(params[:id])

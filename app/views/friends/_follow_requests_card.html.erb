@@ -1,5 +1,8 @@
-<div class="grid grid-cols-5 gap-4">
-  <% follow_requests.each do |request| %>
+<% follow_requests.each do |request| %>
+  <h3 class="text-xl font-bold p-8">
+    Friend request
+  </h3>
+  <div class="grid grid-cols-5 gap-4">
     <div class="min-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 min-w-fit">
       <div class="flex justify-center pt-2">
         <% if request.followerable.avatar.present? %>
@@ -23,5 +26,5 @@
         </div>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
