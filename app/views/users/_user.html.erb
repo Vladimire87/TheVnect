@@ -13,4 +13,5 @@
       <%= user.full_name_titleize %>
     </h3>
   <% end %>
+  <%= button_to 'Follow', follow_path(user), class: "bg-pink-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-1 py-1 rounded outline-none focus:outline-none  ease-linear transition-all duration-150", data: { turbo_frame: "follow_btn", turbo_action: "update" } %>
 </div>
