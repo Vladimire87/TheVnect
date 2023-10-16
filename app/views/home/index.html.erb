@@ -1,9 +1,9 @@
 <%= content_for :dashboard do %>
   Home
 <% end %>
-<div class="grid grid-cols-3">
-  <div class="col-span-2 p-4">
-    <%= render @timeline %>
+<div class="grid grid-cols-4">
+  <div class="col-span-3 p-4 pr-0">
+    <%= render 'posts/index' %>
   </div>
   <div class="col-span-1 p-4">
     <%= render 'home/users_list' %>

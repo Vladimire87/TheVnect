@@ -10,12 +10,14 @@ class ProfileController < ApplicationController
 
   def follow
     current_user.send_follow_request_to(@user)
-    redirect_to profile_path(@user), alert: 'Sent'
+    accept_following
+    redirect_to authenticated_root_path
   end
 
   def unfollow
     current_user.unfollow(@user)
-    redirect_to profile_path(@user)
+    @user.unfollow(current_user)
+    redirect_to authenticated_root_path
   end
 
   def unrequest
