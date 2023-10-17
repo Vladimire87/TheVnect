@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  after_create :send_mail
+
   followability
 
   has_one_attached :avatar, dependent: :destroy
@@ -28,6 +30,10 @@ class User < ApplicationRecord
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
     end
+  end
+
+  def send_mail
+    UserMailer.send_new_user_message(self).deliver_now
   end
 
   def full_name_upcase
