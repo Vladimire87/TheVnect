@@ -20,7 +20,9 @@
             </div>
             <div class="flex-1 min-w-0">
               <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                <%= user.full_name_titleize  %>
+                <%= link_to profile_path(user) do %>
+                  <%= user.full_name_titleize  %>
+                <% end %>
               </p>
               <p class="text-sm text-gray-500 truncate dark:text-gray-400">
                 <%= user.email  %>

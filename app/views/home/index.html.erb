@@ -1,11 +1,11 @@
 <%= content_for :dashboard do %>
   Home
 <% end %>
-<div class="grid grid-cols-4">
-  <div class="col-span-3 p-4 pr-0">
+<div class="grid grid-cols-1 md:grid-cols-4">
+  <div class="md:col-span-3 p-4 md:pr-0">
     <%= render 'posts/index' %>
   </div>
-  <div class="col-span-1 p-4">
+  <div class="md:col-span-1 p-4">
     <%= render 'home/users_list' %>
   </div>
 </div>
