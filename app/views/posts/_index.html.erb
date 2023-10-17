@@ -4,7 +4,7 @@
       <div class="flex items-center gap-4 justify-between">
         <div class="flex flex-row items-center gap-4">
           <%= link_to profile_path(post.user_id) do %>
-            <%= image_tag(post.user.avatar, class: "w-14 h-14 rounded-full object-cover") %>
+            <%= image_tag(post.user.avatar, class: "w-14 h-14 rounded-full object-cover") if post.user.avatar.attached? %>
           <% end %>
           <div>
             <div class="text-base font-semibold text-black">
