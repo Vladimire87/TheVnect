@@ -67,3 +67,6 @@ gem 'guard', '~> 2.18'
 gem 'followability', '~> 1.1'
 
 gem 'cancancan'
+
+gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'

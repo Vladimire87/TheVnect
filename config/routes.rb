@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   end
 
   get 'friends/show'
-  devise_for :users, controllers: { registrations: 'registrations' }
+
+  devise_for :users, controllers: {
+    registrations: 'registrations',
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
 
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
